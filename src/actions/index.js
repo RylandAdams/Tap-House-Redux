@@ -6,3 +6,7 @@ export const viewToggle = (view) => {
     view: view
   }
 };
+
+export const editToggle = () => ({
+  type: c.EDIT_TOGGLE
+});

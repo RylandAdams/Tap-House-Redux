@@ -15,7 +15,7 @@ class SharedView extends React.Component {
       // visibleView: 0,
       masterKegList: [],
       selectedKeg: null,
-      editing: false
+      //editing: false
     };
   }
 

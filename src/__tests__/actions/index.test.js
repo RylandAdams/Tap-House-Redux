@@ -8,6 +8,14 @@ describe('tap-house actions', () => {
           type: c.VIEW_TOGGLE,
           view: 1
         }
-      )
-  })
+      );
+  });
+
+  it('editToggle should create EDIT_TOGGLE action', () => {
+    expect(actions.editToggle()).toEqual(
+      {
+        type: c.EDIT_TOGGLE,
+      }
+    );
+  });
 });
