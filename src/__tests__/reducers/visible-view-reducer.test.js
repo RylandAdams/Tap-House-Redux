@@ -7,8 +7,8 @@ describe('visibleViewReducer', () => {
     test('Should return default state', () => {
       action = {
         type: a.VIEW_TOGGLE,
-        view: 1
+        view: 0
       }
-      expect(visibleViewReducer(1, action)).toEqual(1)
+      expect(visibleViewReducer(0, action)).toEqual(0)
     });
 });
