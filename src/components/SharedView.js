@@ -4,6 +4,7 @@ import KegList from './KegList';
 import KegDetail from './KegDetail';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
+import * as a from "./../actions"
 // import EditKegForm from './EditKegForm';
 
 class SharedView extends React.Component {
@@ -11,7 +12,7 @@ class SharedView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleView: 0,
+      // visibleView: 0,
       masterKegList: [],
       selectedKeg: null,
       editing: false
@@ -19,27 +20,31 @@ class SharedView extends React.Component {
   }
 
   listClick = () => {
+    const { dispatch } = this.props;
     if(this.state.selectedKeg != null){
+      const action = a.viewToggle(1)
+      dispatch(action);
       this.setState({
         selectedKeg: null,
-        visibleView: 1
       });
     } else {
-      this.setState({
-        visibleView: 1
-      });
+      const action = a.viewToggle(1)
+      dispatch(action);
     }
   }
 
   newKegClick = () => {
+    const { dispatch } = this.props;
     if(this.state.selectedKeg != null){
+      const action = a.viewToggle(2)
+      dispatch(action);
       this.setstate ({
         selectedKeg: null,
-        visibleView: 2
       });
     } else {
+      const action = a.viewToggle(2)
+      dispatch(action);
       this.setState({
-        visibleView: 2
       });
     }
   }
@@ -50,8 +55,11 @@ class SharedView extends React.Component {
 
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
+    const { dispatch } = this.props;
+    const action = a.viewToggle(1)
+    dispatch(action);
     this.setState({masterKegList: newMasterKegList,
-                    visibleView: 1});
+                    });
   }
 
   handleChangingSelectedKeg = (id) => {
@@ -80,11 +88,11 @@ class SharedView extends React.Component {
     //   buttonText = "Return to Ticket List";
     if(this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onRestock = {this.handleRestock} onBuy = {this.handleBuy} OnClickingEdit = {this.handleEditClick}/>
-    } else if (this.state.visibleView === 0) {
+    } else if (this.props.visibleView === 0) {
       currentlyVisibleState = null;
-    } else if (this.state.visibleView === 1) {
+    } else if (this.props.visibleView === 1) {
       currentlyVisibleState = <KegList kegList = {this.state.masterKegList} onKegSelection = {this.handleChangingSelectedKeg}/>
-    } else if (this.state.visibleView === 2) {
+    } else if (this.props.visibleView === 2) {
       currentlyVisibleState = <NewKegForm onNewKegCreation = {this.handleAddingNewKegToList}/>
     }
 
