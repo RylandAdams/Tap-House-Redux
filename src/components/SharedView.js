@@ -2,6 +2,8 @@ import React from 'react';
 import NewKegForm from  './NewKegForm';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 // import EditKegForm from './EditKegForm';
 
 class SharedView extends React.Component {
@@ -95,5 +97,23 @@ class SharedView extends React.Component {
     );
   }
 }
+
+SharedView.propTypes = {
+  visibleView: PropTypes.number,
+  masterKegList: PropTypes.object,
+  selectedKeg: null,
+  editing: PropTypes.bool
+}
+
+const mapStateToProps = state => {
+  return {
+    visibleView: state.visibleView,
+    masterKegList: state.masterKegList,
+    selectedKeg: state.selectedKeg,
+    editing: PropTypes.editing
+  }
+}
+
+SharedView = connect(mapStateToProps)(SharedView);
 
 export default SharedView;
