@@ -1,18 +1,14 @@
 import * as a from '../../actions/ActionTypes';
-import visibleViewReducer from './../../actions/ActionTypes';
+import visibleViewReducer from '../../Reducers/visible-view-reducer';
 
 describe('visibleViewReducer', () => {
   let action;
-  let save = {
-    view: 0
-  }
 
     test('Should return default state', () => {
-      const { view } = save
-      action = { 
+      action = {
         type: a.VIEW_TOGGLE,
-        view: view
-      }  
+        view: 1
+      }
       expect(visibleViewReducer(1, action)).toEqual(1)
     });
 });
