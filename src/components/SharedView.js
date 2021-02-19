@@ -12,10 +12,8 @@ class SharedView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // visibleView: 0,
       masterKegList: [],
       selectedKeg: null,
-      //editing: false
     };
   }
 
@@ -50,7 +48,10 @@ class SharedView extends React.Component {
   }
 
   handleEditClick = () => {
-    this.setState({editing: true});
+    const { dispatch } = this.props;
+    const action = a.editToggle()
+    dispatch(action);
+    
   }
 
   handleAddingNewKegToList = (newKeg) => {
