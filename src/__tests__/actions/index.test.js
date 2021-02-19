@@ -18,4 +18,8 @@ describe('tap-house actions', () => {
       }
     );
   });
+
+  it('masterKegList should create KEG_LIST action', () => {
+    expect(actions.masterKegList({keg: {}, id: 0})).toEqual({type: c.KEG_LIST, keg: {}, id: 0});
+  });
 });
