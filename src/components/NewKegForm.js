@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 function NewKegForm(props){
   return (
     <>
-      {/* <ReusableForm formSubmissionHandler = {handleNewKegFormSubmission} 
-      buttonText="Help!"/> */}
       <form onSubmit = {handleNewKegFormSubmission}>
         <label from="name">Keg Name: </label>
         <input
