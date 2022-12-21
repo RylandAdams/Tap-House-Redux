@@ -31,8 +31,14 @@ A React site used to track Keg availability and selection!
 * <a href="https://code.visualstudio.com/">Microsoft Visual Studio Code</a>
 * <a href="https://github.com/">Git/GitHub</a>
 * <a href="https://reactjs.org/">ReactJS</a>
+* <a href="https://redux.js.org/">Redux</a>
+* <a href="https://www.javascript.com/">JavaScriptES6</a>
+* <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>
 * <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">CSS</a>
-* <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://getbootstrap.com/">Bootstrap</a><a href="https://nodejs.org/en/">Node.js</a>
+* <a href="https://webpack.js.org/">Webpack</a>
+* <a href="https://babeljs.io/">Babel</a>
+* <a href="https://eslint.org/">Eslint</a>
 
 # 💾 Installation Requirements
 
